@@ -1,0 +1,26 @@
+{
+  "name": "data-structures-and-algorithms-in-typescript",
+  "description": "This is a repo containing Data Structures and Algorithms (DSA) problem solving questions in typescript",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rbishal50/Data-Structures-and-Algorithms-in-Typescript.git"
+  },
+  "author": "Bishal Rana",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rbishal50/Data-Structures-and-Algorithms-in-Typescript/issues"
+  },
+  "homepage": "https://github.com/rbishal50/Data-Structures-and-Algorithms-in-Typescript#readme",
+  "devDependencies": {
+    "@babel/preset-env": "^7.22.9",
+    "@babel/preset-typescript": "^7.22.5",
+    "@types/jest": "^29.5.3",
+    "jest": "^29.6.1",
+    "jest-cli": "^29.6.1"
+  }
+}
