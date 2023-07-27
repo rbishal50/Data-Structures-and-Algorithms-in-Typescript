@@ -1,5 +1,5 @@
 // Import the function to test
-import { twoNumberSum } from "./twoNumberSum"; // Replace 'your-file' with the correct file path
+import { twoNumberSum } from "./twoNumberSum";
 
 describe("twoNumberSum", () => {
   describe("Cases with valid solutions", () => {

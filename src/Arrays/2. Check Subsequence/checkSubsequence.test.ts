@@ -1,4 +1,4 @@
-import { isSubsequence } from "./checkSubsequence"; // Replace 'your-file' with the correct file path
+import { isSubsequence } from "./checkSubsequence";
 
 describe("isSubsequence", () => {
   describe("Cases with valid subsequences", () => {
