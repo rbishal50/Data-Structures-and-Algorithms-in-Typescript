@@ -1,4 +1,4 @@
-## Check Subsequence
+## Check if subsequence
 
 ### Description
 
