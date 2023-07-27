@@ -19,11 +19,12 @@ export function twoNumberSum(array: number[], targetSum: number) {
       return [array[leftPointer], array[rightPointer]];
     }
 
+    // Because we have sorted the array:
+
     // If currentSum is greater, we have to reduce the sum for next iteration
     if (currentSum > targetSum) rightPointer--;
 
-    // If currentSum is greater, we have to reduce the sum for next iteration
-
+    // If currentSum is smaller, we have to increase the sum for next iteration
     if (currentSum < targetSum) leftPointer++;
   }
   // Return [] if no items found
