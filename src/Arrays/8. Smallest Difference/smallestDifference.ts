@@ -1,5 +1,5 @@
 // O(1) space
-// O(N) time to go through the array once
+// O(NLogN + MLogM) time where N and M are the lengths of the 2 arrays
 
 export function smallestDifference(array1: number[], array2: number[]) {
   // Sort both arrays
