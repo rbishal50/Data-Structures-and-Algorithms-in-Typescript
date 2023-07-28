@@ -1,3 +1,6 @@
+// O(1) space
+// O(N) time to go through the array once
+
 export function smallestDifference(array1: number[], array2: number[]) {
   // Sort both arrays
   array1.sort((a, b) => a - b);
