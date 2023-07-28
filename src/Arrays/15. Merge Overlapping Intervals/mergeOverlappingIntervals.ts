@@ -1,3 +1,6 @@
+// O(N) space
+// O(NLogN) time where N is the length of the input array
+
 export function mergeOverlappingIntervals(array: number[][]): number[][] {
   // Sort the array by the starting value of the intervals
   array.sort((a, b) => a[0] - b[0]);
