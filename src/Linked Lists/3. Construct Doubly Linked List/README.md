@@ -19,11 +19,11 @@ Sets the provided node as the new tail of the linked list.
 
 #### insertBefore(node: Node, nodeToInsert: Node): void
 
-Inserts the `nodeToInsert` before the `node` in the linked list.
+Move the existing `nodeToInsert` before the existing `node` in the linked list.
 
 #### insertAfter(node: Node, nodeToInsert: Node): void
 
-Inserts the `nodeToInsert` after the `node` in the linked list.
+Inserts the existing `nodeToInsert` after the existing `node` in the linked list.
 
 #### insertAtPosition(position: number, nodeToInsert: Node): void
 
@@ -31,7 +31,7 @@ Inserts the `nodeToInsert` at the given position in the linked list. The positio
 
 #### remove(node: Node): void
 
-Removes the provided `node` from the linked list.
+Removes the provided existing `node` from the linked list.
 
 #### removeNodesWithValue(value: number): void
 
