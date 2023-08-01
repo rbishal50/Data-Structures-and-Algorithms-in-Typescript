@@ -1,4 +1,4 @@
-## Intersection node in linked lists
+## Bubble Sort
 
 ### Description
 
