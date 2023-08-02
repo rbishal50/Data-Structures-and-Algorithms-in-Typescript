@@ -1,4 +1,4 @@
-## Power set
+## Phone number mnemonics
 
 Keypad equivalent in a phone:
 | Digit | Letters             |
