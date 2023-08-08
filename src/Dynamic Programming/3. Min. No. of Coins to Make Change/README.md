@@ -1,4 +1,4 @@
-## No. of ways to make change
+## Min no. of coins to make change
 
 Given an array of positive integers representing coin denominations and a single non-negative integer n representing a target amount of money, write a function that returns the smallest number of coins needed to make change for (to sum up to) that target amount using the given coin denominations.
 If it's impossible to make change for the target amount, return -1
