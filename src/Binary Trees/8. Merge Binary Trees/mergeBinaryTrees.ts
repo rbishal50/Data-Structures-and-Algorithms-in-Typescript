@@ -9,6 +9,8 @@ export class BinaryTree {
     this.right = null;
   }
 }
+// O(H) space
+// O(N) time, where N is the no. of nodes & H is the height of the tree
 
 export function mergeBinaryTrees(
   tree1: BinaryTree | null,
