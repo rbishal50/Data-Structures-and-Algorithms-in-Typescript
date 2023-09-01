@@ -1,4 +1,4 @@
-## Min nax stack construction
+## Min max stack construction
 
 ### Description
 
