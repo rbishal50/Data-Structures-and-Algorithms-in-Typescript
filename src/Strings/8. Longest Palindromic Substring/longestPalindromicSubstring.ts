@@ -1,4 +1,4 @@
-// O(N) space
+// O(N) space as we are using slice and slice creates a new string
 // O(N ^ 2) time, where N is the string length
 
 export function longestPalindromicSubstring(string: string): string {
