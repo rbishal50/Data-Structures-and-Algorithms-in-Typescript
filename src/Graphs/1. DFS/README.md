@@ -14,6 +14,6 @@ class Graph {
 
   addVertex(vertex: T): void;
   addEdge(vertex1: T, vertex2: T): void;
-  dfs(startingVertex: T, visited: Set<T>): Set<T>;
+  dfs(startingVertex: T): T[];
 }
 ```

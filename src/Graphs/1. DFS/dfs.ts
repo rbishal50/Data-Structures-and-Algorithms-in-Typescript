@@ -1,3 +1,6 @@
+// O(V + E) space
+// O(V + E) time, where V is the total vertices and E is the total edges in the grapsh
+
 export class Graph<T> {
   private adjacencyList = new Map<T, Set<T>>();
 
@@ -16,41 +19,64 @@ export class Graph<T> {
   }
 
   // Recursive solution
-  dfsRecursive(startingVertex: T, visited: Set<T> = new Set()): Set<T> {
+  dfsRecursive(startingVertex: T): T[] {
     // If vertex is not present return []
-    if (!this.adjacencyList.has(startingVertex)) return new Set();
+    if (!this.adjacencyList.has(startingVertex)) return [];
 
-    // We are using memoization, so add current vertex to visited set
-    visited.add(startingVertex);
+    // Use a visited set to track visited vertices and a result aray to store result
+    const visited: Set<T> = new Set();
+    const result: T[] = [];
 
-    // For each neighbors of current vertex, recursively apply the dfs
-    for (const vertex of this.adjacencyList.get(startingVertex)!) {
-      if (!visited.has(vertex)) {
-        visited = this.dfsRecursive(vertex, visited);
+    // Use a recursive function to traverse the graph
+    const recursiveDfs = (vertex: T) => {
+      // First add to the visited set and result[]
+      visited.add(vertex);
+      result.push(vertex);
+
+      // Get all neighbors of current vertex
+      const neighbors = this.adjacencyList.get(vertex) ?? new Set<T>();
+
+      // For each neighbor, apply the recursive function
+      for (const neighbor of neighbors) {
+        if (visited.has(neighbor)) continue;
+        recursiveDfs(neighbor);
       }
-    }
+    };
 
-    return visited;
+    recursiveDfs(startingVertex);
+
+    return result;
   }
 
   // Stack based solution
-  dfsStack(startingVertex: T): Set<T> {
-    if (!this.adjacencyList.has(startingVertex)) return new Set();
+  dfsStack(startingVertex: T): T[] {
+    // If vertex is not present return []
+    if (!this.adjacencyList.has(startingVertex)) return [];
 
+    // A stack to keep track of vertices
     const stack = [startingVertex];
-    const result = new Set<T>();
+    // A set to keep track of visited vertices
+    const visited = new Set<T>();
+    // A result array to store the result
+    const result: T[] = [];
 
     while (stack.length > 0) {
       const top = stack.pop()!;
 
-      if (result.has(top)) continue;
+      // If already visited continue
+      if (visited.has(top)) continue;
 
-      result.add(top);
+      // Else add to visited and result
+      visited.add(top);
+      result.push(top);
 
-      const neighbors = Array.from(this.adjacencyList.get(top) ?? []);
+      // Get the neighbors
+      const neighbors = this.adjacencyList.get(top) ?? new Set<T>();
 
-      for (let i = neighbors.length - 1; i >= 0; i--) {
-        stack.push(neighbors[i]);
+      // For each neighbor push to the stack
+      // Reverse to get the dfs from left to right
+      for (const neighbor of Array.from(neighbors).reverse()) {
+        if (!visited.has(neighbor)) stack.push(neighbor);
       }
     }
 

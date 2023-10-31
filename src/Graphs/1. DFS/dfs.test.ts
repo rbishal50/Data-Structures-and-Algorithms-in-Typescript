@@ -9,13 +9,13 @@ describe("Graph", () => {
 
   describe("dfs", () => {
     it("returns empty array for unknown starting vertex", () => {
-      expect(graph.dfsRecursive("A")).toEqual(new Set([]));
+      expect(graph.dfsRecursive("A")).toEqual([]);
       expect(graph.dfsStack("A")).toEqual([]);
     });
 
     it("returns array with starting vertex if no edges", () => {
       graph.addVertex("A");
-      expect(graph.dfsRecursive("A")).toEqual(new Set(["A"]));
+      expect(graph.dfsRecursive("A")).toEqual(["A"]);
       expect(graph.dfsStack("A")).toEqual(["A"]);
     });
 
@@ -39,9 +39,16 @@ describe("Graph", () => {
       graph.addEdge("H", "C");
       graph.addEdge("D", "G");
 
-      expect(graph.dfsRecursive("A")).toEqual(
-        new Set(["A", "B", "F", "H", "C", "D", "G", "E"])
-      );
+      expect(graph.dfsRecursive("A")).toEqual([
+        "A",
+        "B",
+        "F",
+        "H",
+        "C",
+        "D",
+        "G",
+        "E",
+      ]);
       expect(graph.dfsStack("A")).toEqual([
         "A",
         "B",
