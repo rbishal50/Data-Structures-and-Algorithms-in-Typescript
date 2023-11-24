@@ -17,7 +17,7 @@ export function minEditOperationsAlternative(
   let prevRow: number[] = [];
   let currRow: number[] = new Array(smallerString.length + 1);
 
-  // Fill the first row as our first row is even and it is like in previous solution's 1st row (minEditOperations.ts file)
+  // Fill the first row as our first row is even
   for (let i = 0; i <= smallerString.length; i++) {
     prevRow.push(i);
   }
@@ -37,8 +37,5 @@ export function minEditOperationsAlternative(
     // For next iteration
     prevRow = [...currRow];
   }
-
-  return biggerString.length % 2 === 0
-    ? prevRow[smallerString.length]
-    : currRow[smallerString.length];
+  return currRow[smallerString.length];
 }
