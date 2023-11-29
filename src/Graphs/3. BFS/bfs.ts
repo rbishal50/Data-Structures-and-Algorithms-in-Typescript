@@ -54,4 +54,38 @@ export class Graph<T> {
 
     return result;
   }
+
+  // Queue based solution
+  bfsQueue(startingVertex: T): T[] {
+    // If vertex is not present return []
+    if (!this.adjacencyList.has(startingVertex)) return [];
+
+    // A queue to keep track of vertices
+    const queue = [startingVertex];
+    // A set to keep track of visited vertices
+    const visited = new Set<T>();
+    // A result array to store the result
+    const result: T[] = [];
+
+    while (queue.length > 0) {
+      const front = queue.shift()!;
+
+      // If already visited continue
+      if (visited.has(front)) continue;
+
+      // Else add to visited and result
+      visited.add(front);
+      result.push(front);
+
+      // Get the neighbors
+      const neighbors = this.adjacencyList.get(front) ?? new Set<T>();
+
+      // For each neighbor push to the queue
+      for (const neighbor of neighbors) {
+        if (!visited.has(neighbor)) queue.push(neighbor);
+      }
+    }
+
+    return result;
+  }
 }
