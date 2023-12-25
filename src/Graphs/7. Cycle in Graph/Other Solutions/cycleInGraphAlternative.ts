@@ -1,6 +1,9 @@
 // UNVISITED, VISITED AND IN STACK, NO BACK EDGES AND NOT IN STACK
 const [WHITE, GREY, BLACK] = [0, 1, 2];
 
+// O(V) space
+// O(V + E) time, where V is the total vertices and E is the total edges in the grapsh
+
 export function cycleInGraphAlternative(edges: number[][]): boolean {
   const noOfEdges = edges.length;
 
