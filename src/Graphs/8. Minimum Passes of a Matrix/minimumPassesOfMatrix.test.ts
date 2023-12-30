@@ -1,6 +1,6 @@
 import { minimumPassesOfMatrix } from "./minimumPassesOfMatrix";
 
-describe("cycleInGraph", () => {
+describe("minimumPassesOfMatrix", () => {
   it("should return correct passes for a normal matrix", () => {
     const matrix = [
       [0, -1, -3, 2, 0],
