@@ -10,8 +10,8 @@ class BST {
   }
 }
 
-// O(1) space & O(logN) time in average
-// O(1) space & O(N) time in worst
+// O(logN) space & O(logN) time in average
+// O(N) space & O(N) time in worst
 // where N is the no. of nodes in the binary search tree
 
 export function closestValueInBst(tree: BST, target: number) {
